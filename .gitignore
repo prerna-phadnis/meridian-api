@@ -1,0 +1,6 @@
+# meridian-api/.gitignore
+.env
+node_modules/
+dist/
+.DS_Store
+*.log
