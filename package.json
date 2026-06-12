@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",  
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.ts"
@@ -26,10 +26,12 @@
     "@supabase/supabase-js": "^2.108.0",
     "axios": "^1.17.0",
     "dotenv": "^17.4.2",
-    "fastify": "^5.8.5"
+    "fastify": "^5.8.5",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
+    "@types/uuid": "^11.0.0",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
