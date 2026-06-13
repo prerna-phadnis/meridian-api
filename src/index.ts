@@ -1,10 +1,9 @@
-// src/index.ts
-
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import multipart from '@fastify/multipart'
 import dotenv from 'dotenv'
 import { paperRoutes } from './routes/papers'
+import { chatRoutes } from './routes/chat'
 
 dotenv.config()
 
@@ -22,6 +21,9 @@ const start = async () => {
   })
 
   fastify.register(paperRoutes, { prefix: '/api/papers' })
+  fastify.register(chatRoutes, {
+  prefix: '/api/chat'
+})
 
   fastify.get('/', async () => ({
     message: '🧠 Meridian API',
