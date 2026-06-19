@@ -4,6 +4,7 @@ import multipart from '@fastify/multipart'
 import dotenv from 'dotenv'
 import { paperRoutes } from './routes/papers'
 import { chatRoutes } from './routes/chat'
+import { notesRoutes } from './routes/notes' // ADD
 
 dotenv.config()
 
@@ -19,6 +20,9 @@ const start = async () => {
   await fastify.register(multipart, {
     limits: { fileSize: 50 * 1024 * 1024 } // 50MB
   })
+
+
+  fastify.register(notesRoutes, { prefix: '/api/notes' }) // ADD
 
   fastify.register(paperRoutes, { prefix: '/api/papers' })
   fastify.register(chatRoutes, {
