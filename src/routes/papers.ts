@@ -1,8 +1,8 @@
 // meridian-api/src/routes/papers.ts
 
 import type { FastifyInstance } from 'fastify'
-import { authenticate } from '../middleware/auth'
-import { supabase } from '../lib/supabase'
+import { authenticate } from '../middleware/auth.js'
+import { supabase } from '../lib/supabase.js'
 import { randomUUID } from 'crypto'
 import axios from 'axios'
 

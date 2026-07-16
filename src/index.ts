@@ -12,8 +12,12 @@ dotenv.config()
 const fastify = Fastify({ logger: true })
 
 const start = async () => {
+  const corsOrigins = (process.env.CORS_ORIGINS ?? 'http://localhost:5173')
+    .split(',')
+    .map((origin) => origin.trim())
+
   await fastify.register(cors, {
-    origin: ['http://localhost:5173'],
+    origin: corsOrigins,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],

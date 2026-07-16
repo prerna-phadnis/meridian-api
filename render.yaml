@@ -1,0 +1,25 @@
+# Render Blueprint for meridian-api (Node/Fastify gateway)
+# Connect this repo in the Render dashboard: New → Blueprint → meridian-api
+#
+# `sync: false` env vars are prompted for on first deploy (or set them later
+# under the service's Environment tab). Cross-service URLs depend on the public
+# URLs Render assigns, so fill them in after all three services exist.
+
+services:
+  - type: web
+    name: meridian-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free # bump to `starter` to avoid sleeping / cold starts
+    region: oregon
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: PYTHON_AI_URL # public URL of meridian-ai, e.g. https://meridian-ai-xxxx.onrender.com
+        sync: false
+      - key: CORS_ORIGINS # e.g. https://meridian-web-xxxx.onrender.com,http://localhost:5173
+        sync: false

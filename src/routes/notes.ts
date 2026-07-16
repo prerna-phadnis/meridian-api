@@ -1,7 +1,7 @@
 // meridian-api/src/routes/notes.ts
 
 import type { FastifyInstance } from 'fastify'
-import { authenticate } from '../middleware/auth'
+import { authenticate } from '../middleware/auth.js'
 import axios from 'axios'
 
 export const notesRoutes = async (fastify: FastifyInstance) => {

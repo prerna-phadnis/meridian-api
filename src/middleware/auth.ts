@@ -2,7 +2,7 @@
 // Verifies supabase token on every protected request
 
 import type { FastifyRequest, FastifyReply } from 'fastify'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../lib/supabase.js'
 
 export const authenticate = async (
   request: FastifyRequest,
